@@ -1,12 +1,10 @@
 
-import React from 'react'
+import React from 'react';
 import { Component } from 'react';
-import { connect } from 'react-redux'
-import ModelDetails from './modelDetails'
-
+import { connect } from 'react-redux';
+import ModelDetails from './modelDetails';
 
 class ModelDetailsContainer extends Component {
-
   render () {
     return (
       <div>
@@ -22,6 +20,6 @@ const mapStateToProps = state => {
   return {
     models: state
   }
-}
+};
 
 export default connect(mapStateToProps)(ModelDetailsContainer)

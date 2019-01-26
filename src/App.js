@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import './App.css';
-import { addModel } from './actions/addModel'
-import { connect } from 'react-redux';
+
 import ModelDetailsContainer from './components/modelDetailContainer';
+import { addModel } from './actions/addModel'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import './App.css';
 
 const data = {
   "Ivel Z3": {
@@ -28,7 +29,6 @@ const data = {
 }
 
 class App extends Component {
-
   state = {}
   
   addModel = () => {
@@ -46,7 +46,6 @@ class App extends Component {
   };
 
   render() { 
-    console.log(this.state);  
     return (
       <div className="App">
         <select onChange={this.updateSelection} value={this.state.value}>
@@ -70,5 +69,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps,{ addModel })(App);
-
-

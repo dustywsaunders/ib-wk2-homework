@@ -1,5 +1,5 @@
 
-export const ADD_MODEL = 'ADD_MODEL'
+export const ADD_MODEL = 'ADD_MODEL';
 
 export const addModel = (name, manufacturer, year, origin) => {
   return {

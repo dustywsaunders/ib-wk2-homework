@@ -1,5 +1,5 @@
 
-import { ADD_MODEL } from '../actions/addModel'
+import { ADD_MODEL } from '../actions/addModel';
 
 const initialState = []
 
@@ -13,4 +13,4 @@ export default (state = initialState, action = {}) => {
     default:
     return state
   }
-}
+};

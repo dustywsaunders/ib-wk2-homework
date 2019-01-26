@@ -1,6 +1,6 @@
 
 import React from 'react';
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types';
 
 export default function ModelDetails(props){
   return (
@@ -11,11 +11,13 @@ export default function ModelDetails(props){
         <li className="origin">Origin: { props.model.origin }</li>
       </ul>
   )
-}
-
-ModelDetails.propTypes = {
-    name: PropTypes.string.isRequired,
-    manufacturer: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired,
-    origin: PropTypes.string.isRequired
 };
+
+// I COULD NOT GET THE PROPTYPES TO WORK AND KEPT GIVING ME ERRORS IN CONSOLE (PROPTYPE IS UNDEFINED), SO I COMMENTED THEM OUT FOR NOW
+//
+// ModelDetails.propTypes = {
+//   model: PropTypes.string.isRequired,
+//   manufacturer: PropTypes.string.isRequired,
+//   year: PropTypes.number.isRequired,
+//   origin: PropTypes.string.isRequired
+// };
