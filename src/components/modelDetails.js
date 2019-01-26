@@ -1,16 +1,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types'
-// import data from '../App'
 
 export default function ModelDetails(props){
   return (
-    
       <ul>
-        <li className="name">Name: { }</li>
-        <li className="manufacturer">Manufacturer: { }</li>
-        <li className="year">Year: { }</li>
-        <li className="origin">Origin: { }</li>
+        <li className="name">Name: { props.model.model }</li>
+        <li className="manufacturer">Manufacturer: { props.model.manufacturer }</li>
+        <li className="year">Year: { props.model.year }</li>
+        <li className="origin">Origin: { props.model.origin }</li>
       </ul>
   )
 }
@@ -21,4 +19,3 @@ ModelDetails.propTypes = {
     year: PropTypes.number.isRequired,
     origin: PropTypes.string.isRequired
 };
-

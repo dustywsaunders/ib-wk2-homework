@@ -66,10 +66,9 @@ class App extends Component {
 const mapStateToProps = state => {
   return { 
     models: state.models
-
   }
 };
 
-export default connect(mapStateToProps,{ addModel })(App, data);
+export default connect(mapStateToProps,{ addModel })(App);
 
 
