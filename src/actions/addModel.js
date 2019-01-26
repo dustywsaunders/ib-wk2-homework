@@ -5,10 +5,10 @@ export const addModel = (name, manufacturer, year, origin) => {
   return {
       type: ADD_MODEL,
       payload: {
-        name: name,
+        model: name,
         manufacturer: manufacturer,
         year: year,
         origin: origin
       }
   }
-}
+};

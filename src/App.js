@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { addModel } from './actions/addModel'
 import { connect } from 'react-redux';
+import ModelDetailsContainer from './components/modelDetailContainer';
 
 const data = {
   "Ivel Z3": {
@@ -30,24 +31,22 @@ class App extends Component {
 
   state = {}
   
+  addModel = () => {
+    const model = this.state.value
+    const manufacturer = data[`${model}`].manufacturer
+    const year = data[`${model}`].year
+    const origin = data[`${model}`].origin
+    this.props.addModel(model, manufacturer, year, origin)
+  };
+
   updateSelection = (event) => {
     this.setState({
-      model: event.target.value
+      value: event.target.value
     }) 
   };
 
-  addModel = () => {
-    const name = this.state.model
-    const manufacturer = data[this.state.model].manufacturer
-    const year = data[this.state.model].year
-    const origin = data[this.state.model].origin
-    this.props.addModel(name, manufacturer, year, origin)
-  };
-
-  render() {
-    console.log(data);
-    
-    console.log(this.state)
+  render() { 
+    console.log(this.state);  
     return (
       <div className="App">
         <select onChange={this.updateSelection} value={this.state.value}>
@@ -58,11 +57,19 @@ class App extends Component {
           }
         </select>
         <button onClick={() => this.addModel()}>Add Model</button>
+        <ModelDetailsContainer />
       </div>
     )
   };
-  
 };
 
-export default connect(null, { addModel })(App)
+const mapStateToProps = state => {
+  return { 
+    models: state.models
+
+  }
+};
+
+export default connect(mapStateToProps,{ addModel })(App, data);
+
 
